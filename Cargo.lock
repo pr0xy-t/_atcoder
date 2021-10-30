@@ -27,3 +27,10 @@ checksum = "91c333be3af2936f8e810300bc74fe4d0cc168ebc04ab02a28c5b1060fa1bd59"
 dependencies = [
  "lazy_static",
 ]
+
+[[package]]
+name = "typical90"
+version = "0.1.0"
+dependencies = [
+ "proconio",
+]
