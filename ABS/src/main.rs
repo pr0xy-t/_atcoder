@@ -208,6 +208,39 @@ fn practice_10(){
     }
     
 }
+
+fn practice_11(){
+    input! {
+        N:i64,
+    }
+    let mut t_0: i64 = 0;
+    let mut x_before:i64 = 0;
+    let mut y_before:i64 = 0;
+    let mut flag = true;
+    for i in 0..N {
+        input! {
+            t: i64,
+            x: i64,
+            y: i64,
+        }
+        let t_diff = t - t_0;
+        let x_diff = if (x - x_before)>0 {x-x_before}else{x_before-x};
+        let y_diff = if (y - y_before)>0 {y-y_before}else{y_before-y};
+        if !(t_diff >= (x_diff + y_diff) && (t_diff - x_diff - y_diff) % 2 == 0 ){
+            flag = false;
+            break;
+        }
+        t_0 = t;
+        x_before = x;
+        y_before = y;
+        
+    }
+    if flag {
+        println!("Yes");
+    }else{
+        println!("No");
+    }
+}
 fn main() {
-    practice_10();
+    practice_11();
 }
