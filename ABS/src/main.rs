@@ -173,6 +173,41 @@ fn practice_9(){
         println!("-1 -1 -1");
     }
 }
+
+fn practice_10(){
+    input! {
+        s:String,
+    }
+    let mut flag = true;
+    let mut len = s.len();
+    // println!("{}",len);
+    // let s_len = s.len();
+    // let t = &s[0..];
+    loop{
+        if len >= 5 && &s[len-5..len] == "dream" {
+            len -= 5;
+        }else if len >= 7 && &s[len-7..len] == "dreamer" {
+            len -= 7;
+        }else if len >= 5 && &s[len-5..len] == "erase" {
+            len -= 5;
+        }else if len >= 6 && &s[len-6..len] == "eraser" {
+            len -= 6;
+        }else{
+            if len as i32 == 0{
+                break;
+            }
+            flag = false;
+            break;
+        }
+        // println!("{}",len);
+    }
+    if flag {
+        println!("YES");
+    }else{
+        println!("NO");
+    }
+    
+}
 fn main() {
-    practice_9();
+    practice_10();
 }
