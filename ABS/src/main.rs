@@ -128,8 +128,23 @@ fn practice_7(){
     a.sort();
     a.reverse();
     
-    println!("{:?}", a.iter().enumerate());
+    let mut alice_score = 0;
+    let mut bob_score = 0;
+
+    for i in a.iter().enumerate(){
+        if i.0 % 2 == 0 {
+            alice_score += i.1;
+        }else{
+            bob_score += i.1;
+        }
+    }
+    println!("{}", alice_score - bob_score);
+    
+}
+
+fn practice_8(){
+
 }
 fn main() {
-    practice_7();
+    practice_8();
 }
