@@ -1,3 +1,4 @@
+use std::collections::HashSet;
 use std::io::*;
 use std::str::FromStr;
 
@@ -143,8 +144,35 @@ fn practice_7(){
 }
 
 fn practice_8(){
+    input! {
+        n: u32,
+        mut a: [i32;n],
+    }
+    let uniq: HashSet<i32> = a.into_iter().collect();
+    println!("{}", uniq.len());
+}
 
+fn practice_9(){
+    input! {
+        N:i64,
+        Y: i64,
+    }
+    let mut flag = false;
+    'outer: for i in 0..(N+1) {
+        for j in 0..(N+1-i){
+            let k = N-i-j;
+            if 10000 * i + 5000 * j + 1000 * k == Y {
+                println!("{} {} {}",i,j,k);
+                flag = true;
+                break 'outer;
+            }
+            
+        }
+    }
+    if !flag {
+        println!("-1 -1 -1");
+    }
 }
 fn main() {
-    practice_8();
+    practice_9();
 }
